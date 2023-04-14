@@ -10,7 +10,6 @@ import UIKit
 class PhotoCell: UICollectionViewCell {
 
     @IBOutlet weak var image: UIImageView!
-    
     @IBOutlet weak var authorLabel: UILabel!
     
     override func awakeFromNib() {

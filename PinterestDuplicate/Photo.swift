@@ -7,6 +7,13 @@
 
 import Foundation
 
-struct Photo {
+struct Photo: Decodable {
+    let id: String
     let author: String
+    let url: String
+    
+    enum CodingKeys: String, CodingKey {
+        case id, author
+        case url = "download_url"
+    }
 }

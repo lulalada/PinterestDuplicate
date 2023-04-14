@@ -16,15 +16,13 @@
                 <rect key="frame" x="0.0" y="0.0" width="150" height="208"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ril-wE-jtZ">
-                        <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="150" id="Fun-5B-7EW"/>
-                            <constraint firstAttribute="width" constant="150" id="sDt-z5-2jh"/>
-                        </constraints>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ril-wE-jtZ">
+                        <rect key="frame" x="0.0" y="0.0" width="150" height="167.66666666666666"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PKQ-06-Ava">
-                        <rect key="frame" x="5" y="160" width="140" height="38"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PKQ-06-Ava">
+                        <rect key="frame" x="5" y="177.66666666666666" width="140" height="20.333333333333343"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -33,17 +31,6 @@
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <color key="backgroundColor" red="0.1137254902" green="0.60784313729999995" blue="0.96470588239999999" alpha="1" colorSpace="calibratedRGB"/>
-            <constraints>
-                <constraint firstAttribute="trailing" secondItem="PKQ-06-Ava" secondAttribute="trailing" constant="5" id="4yC-v1-cHI"/>
-                <constraint firstItem="PKQ-06-Ava" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="9sz-wG-2kB"/>
-                <constraint firstAttribute="bottom" secondItem="PKQ-06-Ava" secondAttribute="bottom" constant="10" id="NJ4-md-dFt"/>
-                <constraint firstItem="ril-wE-jtZ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Voh-05-kxr"/>
-                <constraint firstItem="ril-wE-jtZ" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="apA-aZ-veG"/>
-                <constraint firstItem="PKQ-06-Ava" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="jzM-y0-6ck"/>
-                <constraint firstItem="PKQ-06-Ava" firstAttribute="top" secondItem="ril-wE-jtZ" secondAttribute="bottom" constant="10" id="mJo-nU-otZ"/>
-                <constraint firstItem="ril-wE-jtZ" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="sud-Xr-FRe"/>
-                <constraint firstAttribute="trailing" secondItem="ril-wE-jtZ" secondAttribute="trailing" id="zoX-26-DmC"/>
-            </constraints>
             <size key="customSize" width="150" height="208"/>
             <connections>
                 <outlet property="authorLabel" destination="PKQ-06-Ava" id="jFE-yr-pFe"/>
