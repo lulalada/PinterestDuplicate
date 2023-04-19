@@ -8,6 +8,7 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
+import SDWebImage
 class ViewController: UIViewController {
     
     let url = "https://picsum.photos/v2/list?page=2&limit=100"
@@ -51,7 +52,7 @@ extension ViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ReusableCell", for: indexPath) as! PhotoCell
-        
+        cell.image.sd_setImage(with: URL(string: photos[indexPath.row].url))
         cell.authorLabel.text = photos[indexPath.row].author
         
         return cell

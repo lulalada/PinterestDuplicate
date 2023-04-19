@@ -14,7 +14,12 @@ class PhotoCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        image.contentMode = .scaleAspectFill
+
         // Initialization code
     }
 
+    override func layoutSubviews() {
+        self.layer.cornerRadius = 15.0
+    }
 }
