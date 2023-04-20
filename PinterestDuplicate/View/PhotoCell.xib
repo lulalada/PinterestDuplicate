@@ -26,7 +26,7 @@
                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="FYX-C7-jwl">
                         <rect key="frame" x="0.0" y="173.66666666666666" width="180" height="34.333333333333343"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PKQ-06-Ava">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PKQ-06-Ava">
                                 <rect key="frame" x="0.0" y="0.0" width="130" height="34.333333333333336"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" systemColor="secondarySystemGroupedBackgroundColor"/>
@@ -40,24 +40,30 @@
                                 <color key="tintColor" systemColor="systemPinkColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="heart" catalog="system"/>
+                                <connections>
+                                    <action selector="addToFavourite:" destination="gTV-IL-0wX" eventType="touchUpInside" id="Hv4-5o-9iZ"/>
+                                </connections>
                             </button>
                         </subviews>
+                        <color key="backgroundColor" white="0.33304388733471141" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </stackView>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="ril-wE-jtZ" secondAttribute="trailing" id="1KA-mN-VjC"/>
                 <constraint firstItem="ril-wE-jtZ" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="5CU-Be-XNe"/>
                 <constraint firstItem="ril-wE-jtZ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="8J1-8z-2h9"/>
                 <constraint firstAttribute="bottom" secondItem="ril-wE-jtZ" secondAttribute="bottom" id="MFh-XH-bMv"/>
+                <constraint firstItem="FYX-C7-jwl" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Obe-CK-gek"/>
                 <constraint firstAttribute="bottom" secondItem="FYX-C7-jwl" secondAttribute="bottom" id="Ym5-0o-pp4"/>
                 <constraint firstAttribute="trailing" secondItem="FYX-C7-jwl" secondAttribute="trailing" id="buf-ea-RoY"/>
-                <constraint firstItem="FYX-C7-jwl" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="jEE-oT-FoJ"/>
             </constraints>
             <size key="customSize" width="180" height="208"/>
             <connections>
                 <outlet property="authorLabel" destination="PKQ-06-Ava" id="jFE-yr-pFe"/>
+                <outlet property="favouriteButton" destination="evN-tm-eJh" id="y9A-My-AZy"/>
                 <outlet property="image" destination="ril-wE-jtZ" id="17L-0h-Fzm"/>
             </connections>
             <point key="canvasLocation" x="109.9236641221374" y="-35.91549295774648"/>
