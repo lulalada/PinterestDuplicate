@@ -11,12 +11,12 @@ import UIKit
 class PhotoCell: UICollectionViewCell {
     
     weak var delegate:PhotoCellDelegate?
-    public var id: Int = 0
-    public var currentPhoto: Photo!
+    var id: Int = 0
+    var currentPhoto: Photo!
+    var isAdded = false
     
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var authorLabel: UILabel!
-    
     @IBOutlet weak var favouriteButton: UIButton!
     
     override func awakeFromNib() {
@@ -40,8 +40,8 @@ class PhotoCell: UICollectionViewCell {
     
     @IBAction func addToFavourite(_ sender: UIButton) {
         favouriteButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
-        print(currentPhoto)
+        isAdded = true
         delegate?.addToFavourites(photo: currentPhoto)
-        
+
     }
 }

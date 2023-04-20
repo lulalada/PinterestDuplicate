@@ -16,4 +16,16 @@ struct Photo: Codable {
         case id, author
         case url = "download_url"
     }
+    init(id: String, author: String, url: String) {
+        self.id = id
+        self.author = author
+        self.url = url
+    }
+    
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        self.id = try container.decode(String.self, forKey: .id)
+        self.author = try container.decode(String.self, forKey: .author)
+        self.url = try container.decode(String.self, forKey: .url)
+    }
 }

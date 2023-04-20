@@ -20,6 +20,7 @@
 		B1F2069929EFD6BC0050B31C /* FavouriteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B1F2069729EFD6BC0050B31C /* FavouriteCell.xib */; };
 		B1F2069E29F157140050B31C /* PhotoCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F2069D29F157140050B31C /* PhotoCellDelegate.swift */; };
 		B1F206A029F16BE90050B31C /* FavouritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F2069F29F16BE90050B31C /* FavouritesViewController.swift */; };
+		B1F206A229F1A2290050B31C /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F206A129F1A2290050B31C /* PhotoViewController.swift */; };
 		C1C30FD86B8643104AAD6E2E /* Pods_PinterestDuplicate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 266C84A1650397EB465073E5 /* Pods_PinterestDuplicate.framework */; };
 /* End PBXBuildFile section */
 
@@ -42,6 +43,7 @@
 		B1F2069729EFD6BC0050B31C /* FavouriteCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavouriteCell.xib; sourceTree = "<group>"; };
 		B1F2069D29F157140050B31C /* PhotoCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCellDelegate.swift; sourceTree = "<group>"; };
 		B1F2069F29F16BE90050B31C /* FavouritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesViewController.swift; sourceTree = "<group>"; };
+		B1F206A129F1A2290050B31C /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,7 +85,9 @@
 				B18DF1FE29E68A2E00B05C4B /* AppDelegate.swift */,
 				B18DF20029E68A2E00B05C4B /* SceneDelegate.swift */,
 				B1F2069D29F157140050B31C /* PhotoCellDelegate.swift */,
+				B18DF20429E68A2E00B05C4B /* Main.storyboard */,
 				B18DF20729E68A3100B05C4B /* Assets.xcassets */,
+				B18DF20929E68A3100B05C4B /* LaunchScreen.storyboard */,
 				B18DF20C29E68A3100B05C4B /* Info.plist */,
 			);
 			path = PinterestDuplicate;
@@ -100,10 +104,9 @@
 		B1F2069B29F1569D0050B31C /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				B1F206A129F1A2290050B31C /* PhotoViewController.swift */,
 				B1F2069F29F16BE90050B31C /* FavouritesViewController.swift */,
 				B18DF20229E68A2E00B05C4B /* ViewController.swift */,
-				B1D46DA129E71F2E008887AE /* PhotoCell.swift */,
-				B1F2069629EFD6BC0050B31C /* FavouriteCell.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -111,10 +114,10 @@
 		B1F2069C29F156A40050B31C /* View */ = {
 			isa = PBXGroup;
 			children = (
-				B18DF20429E68A2E00B05C4B /* Main.storyboard */,
-				B18DF20929E68A3100B05C4B /* LaunchScreen.storyboard */,
 				B1D46DA229E71F2E008887AE /* PhotoCell.xib */,
+				B1D46DA129E71F2E008887AE /* PhotoCell.swift */,
 				B1F2069729EFD6BC0050B31C /* FavouriteCell.xib */,
+				B1F2069629EFD6BC0050B31C /* FavouriteCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -258,6 +261,7 @@
 				B1F2069829EFD6BC0050B31C /* FavouriteCell.swift in Sources */,
 				B1F2069E29F157140050B31C /* PhotoCellDelegate.swift in Sources */,
 				B18DF20329E68A2E00B05C4B /* ViewController.swift in Sources */,
+				B1F206A229F1A2290050B31C /* PhotoViewController.swift in Sources */,
 				B18DF1FF29E68A2E00B05C4B /* AppDelegate.swift in Sources */,
 				B18DF20129E68A2E00B05C4B /* SceneDelegate.swift in Sources */,
 				B1D46DA629E721FD008887AE /* Photo.swift in Sources */,

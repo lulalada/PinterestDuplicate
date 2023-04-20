@@ -8,11 +8,13 @@
 import UIKit
 
 class FavouriteCell: UICollectionViewCell {
-    @IBOutlet weak var image: UIImageView!
     
+    @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var authorLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
+        image.contentMode = .scaleAspectFill
         // Initialization code
     }
     func configure(photo: Photo) {
@@ -20,5 +22,9 @@ class FavouriteCell: UICollectionViewCell {
         image.sd_setImage(with: URL(string: photo.url))
         authorLabel.text = photo.author
         
+    }
+    
+    override func layoutSubviews() {
+        self.layer.cornerRadius = 15.0
     }
 }

@@ -7,7 +7,6 @@
 
 import UIKit
 import Alamofire
-import SwiftyJSON
 import SDWebImage
 class ViewController: UIViewController {
     
@@ -15,6 +14,7 @@ class ViewController: UIViewController {
     var photos = [Photo]()
     var favourites = [Photo]()
     let defaults = UserDefaults.standard
+    var position = 0
     
     @IBOutlet weak var collection: UICollectionView!
     
@@ -36,19 +36,39 @@ class ViewController: UIViewController {
             for item in responsePhoto {
                 self.photos.append(item)
             }
-            //defaults.set(photos, forKey: "FavouritesArray")
             self.collection.reloadData()
+        }
+        
+        if let data = UserDefaults.standard.data(forKey: "FavouritesArray"){
+           favourites = try! PropertyListDecoder().decode([Photo].self, from: data)
         }
     }
 }
 
 
 
-//MARK: - UICollectionViewDataSource
+//MARK: - UICollectionViewDelegate
 extension ViewController: UICollectionViewDelegate {
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        position = indexPath.row
+        performSegue(withIdentifier: "goToPhoto", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+
+        guard let secondVC = segue.destination
+          as? PhotoViewController else {return}
+        //secondVC.delegate = self
+
+        if segue.identifier == "goToPhoto" {
+            secondVC.id = photos[position].id
+        }
+
+    }
 }
 
+//MARK: - UICollectionViewDataSource
 extension ViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return photos.count
