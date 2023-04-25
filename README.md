@@ -5,9 +5,9 @@ This app is a Pinterest duplicate that allows users to view and save their favor
 
 Features
 
-View images from Picsum API
-Save and remove images as favorites
-View and manage favorites list
+* View images from Picsum API
+* Save and remove images as favorites
+* View and manage favorites list
 
 Clone the repository to your local machine
 Open the project in Xcode
