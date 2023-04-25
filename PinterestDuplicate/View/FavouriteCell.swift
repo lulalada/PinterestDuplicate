@@ -9,8 +9,14 @@ import UIKit
 
 class FavouriteCell: UICollectionViewCell {
     
+    weak var delegate:FavouriteCellDelegate?
+    var id: Int = 0
+    var currentPhoto: Photo!
+
+    
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var authorLabel: UILabel!
+    @IBOutlet weak var deleteButton: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -18,7 +24,7 @@ class FavouriteCell: UICollectionViewCell {
         // Initialization code
     }
     func configure(photo: Photo) {
-        //self.currentPhoto = photo
+        self.currentPhoto = photo
         image.sd_setImage(with: URL(string: photo.url))
         authorLabel.text = photo.author
         
@@ -27,4 +33,9 @@ class FavouriteCell: UICollectionViewCell {
     override func layoutSubviews() {
         self.layer.cornerRadius = 15.0
     }
+    
+    @IBAction func deleteFromFavourites(_ sender: UIButton) {
+        delegate?.deleteFromFavourites(photo: currentPhoto)
+    }
+    
 }

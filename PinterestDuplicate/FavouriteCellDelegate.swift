@@ -6,7 +6,7 @@
 //
 
 import Foundation
-protocol PhotoCellDelegate: AnyObject
+protocol FavouriteCellDelegate: AnyObject
 {
-    func addToFavourites(photo: Photo, isAdded: Bool)
+    func deleteFromFavourites(photo: Photo)
 }

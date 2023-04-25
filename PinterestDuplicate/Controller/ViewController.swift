@@ -28,20 +28,23 @@ class ViewController: UIViewController {
     }
 
     func loadData() {
+        if let data = UserDefaults.standard.data(forKey: "FavouritesArray"){
+           favourites = try! PropertyListDecoder().decode([Photo].self, from: data)
+        }
        
         let request = AF.request(url)
         
         request.responseDecodable (of: [Photo].self) { (response) in
             guard let responsePhoto = response.value else {return}
+            
             for item in responsePhoto {
-                self.photos.append(item)
+                if !self.favourites.contains(item) {
+                    self.photos.append(item)
+                }
             }
             self.collection.reloadData()
         }
         
-        if let data = UserDefaults.standard.data(forKey: "FavouritesArray"){
-           favourites = try! PropertyListDecoder().decode([Photo].self, from: data)
-        }
     }
 }
 
@@ -68,6 +71,8 @@ extension ViewController: UICollectionViewDelegate {
     }
 }
 
+
+
 //MARK: - UICollectionViewDataSource
 extension ViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -77,6 +82,7 @@ extension ViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ReusableCell", for: indexPath) as! PhotoCell
+        
         cell.configure(photo: photos[indexPath.row])
         cell.delegate = self
         
@@ -85,16 +91,24 @@ extension ViewController: UICollectionViewDataSource {
     
     
 }
+
+
+
 //MARK: - PhotoCellDelegate
 extension ViewController: PhotoCellDelegate {
-    func addToFavourites(photo: Photo) {
-        print(photo)
-        favourites.append(photo)
-        print(favourites)
+    func addToFavourites(photo: Photo, isAdded: Bool) {
+        if isAdded {
+            favourites.append(photo)
+        } else {
+            if let index = favourites.firstIndex(where: { value in
+                return value == photo
+            }) {
+                favourites.remove(at: index)
+            }
+
+        }
         if let data = try? PropertyListEncoder().encode(favourites) {
             defaults.set(data, forKey: "FavouritesArray")
         }
     }
-    
-    
 }

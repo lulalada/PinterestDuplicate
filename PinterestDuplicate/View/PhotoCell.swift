@@ -39,9 +39,14 @@ class PhotoCell: UICollectionViewCell {
     }
     
     @IBAction func addToFavourite(_ sender: UIButton) {
-        favouriteButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
-        isAdded = true
-        delegate?.addToFavourites(photo: currentPhoto)
+        if isAdded {
+            favouriteButton.setImage(UIImage(systemName: "heart"), for: .normal)
+            isAdded = false
+        } else {
+            isAdded = true
+            favouriteButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+        }
+        delegate?.addToFavourites(photo: currentPhoto, isAdded: isAdded)
 
     }
 }

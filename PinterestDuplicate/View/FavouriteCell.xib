@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -19,35 +20,62 @@
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tUK-CV-1es">
                         <rect key="frame" x="0.0" y="0.0" width="149" height="165"/>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JZQ-DU-lYm">
+                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gzO-Sk-8fc">
                         <rect key="frame" x="0.0" y="140" width="149" height="25"/>
-                        <color key="backgroundColor" white="0.33304388730000001" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="25" id="MCT-HT-tUL"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JZQ-DU-lYm">
+                                <rect key="frame" x="0.0" y="0.0" width="99" height="25"/>
+                                <color key="backgroundColor" white="0.33304388730000001" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="MCT-HT-tUL"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fXv-Gn-5Wz">
+                                <rect key="frame" x="99" y="0.0" width="50" height="25"/>
+                                <color key="backgroundColor" white="0.33304388730000001" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="9UW-2b-vr5"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="systemPinkColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="heart.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="deleteFromFavourites:" destination="gTV-IL-0wX" eventType="touchUpInside" id="Wxp-7l-Yi6"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="tintColor" white="0.33304388730000001" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </stackView>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <color key="backgroundColor" red="0.26274509800000001" green="0.26274509800000001" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="JZQ-DU-lYm" secondAttribute="trailing" id="94v-BH-hhn"/>
-                <constraint firstAttribute="bottom" secondItem="JZQ-DU-lYm" secondAttribute="bottom" id="CFh-Us-5LM"/>
+                <constraint firstItem="gzO-Sk-8fc" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="0oz-fy-Cod"/>
+                <constraint firstAttribute="trailing" secondItem="gzO-Sk-8fc" secondAttribute="trailing" id="3ga-Gg-eBE"/>
+                <constraint firstAttribute="bottom" secondItem="gzO-Sk-8fc" secondAttribute="bottom" id="Fo5-AR-5yG"/>
                 <constraint firstAttribute="trailing" secondItem="tUK-CV-1es" secondAttribute="trailing" id="RMl-iD-1di"/>
                 <constraint firstItem="tUK-CV-1es" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="TUn-Ds-hSK"/>
+                <constraint firstItem="gzO-Sk-8fc" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="alI-RS-RUK"/>
                 <constraint firstItem="tUK-CV-1es" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="eRB-Vw-52f"/>
-                <constraint firstItem="JZQ-DU-lYm" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="hn7-yI-MSY"/>
                 <constraint firstAttribute="bottom" secondItem="tUK-CV-1es" secondAttribute="bottom" id="mZO-rj-eqJ"/>
             </constraints>
             <size key="customSize" width="149" height="165"/>
             <connections>
                 <outlet property="authorLabel" destination="JZQ-DU-lYm" id="UiH-JG-la3"/>
+                <outlet property="deleteButton" destination="fXv-Gn-5Wz" id="KwL-pv-8ea"/>
                 <outlet property="image" destination="tUK-CV-1es" id="dRE-Tr-pcL"/>
             </connections>
             <point key="canvasLocation" x="214.50381679389312" y="-29.929577464788736"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="heart.fill" catalog="system" width="128" height="107"/>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>

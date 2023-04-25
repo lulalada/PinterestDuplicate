@@ -16,25 +16,28 @@ class PhotoViewController: UIViewController {
     
     @IBOutlet var authorLabel: UILabel!
     @IBOutlet weak var photoImage: UIImageView!
+    @IBOutlet weak var urlLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        photoImage.contentMode = .scaleAspectFill
         // Do any additional setup after loading the view.
+        photoImage.contentMode = .scaleAspectFill
         loadData()
     }
 
     func loadData() {
         url.append(id)
         url.append("/info")
-        print(url)
         let request = AF.request(url)
         
         request.responseDecodable (of: Photo.self) { (response) in
             guard let responsePhoto = response.value else {return}
-            print(responsePhoto)
             self.photoImage.sd_setImage(with: URL(string: responsePhoto.url))
             self.authorLabel.text = responsePhoto.author
+            let attributedString = NSMutableAttributedString(string: "You can download here")
+            let url = URL(string: responsePhoto.url)!
+            attributedString.addAttribute(.link, value: url, range: NSRange(location: 0, length: attributedString.length))
+            self.urlLabel.attributedText = attributedString
         }
     }
 }
